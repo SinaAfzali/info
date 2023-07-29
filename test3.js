@@ -14,7 +14,7 @@ var setproduct = function(productImage, productName, productDescription){
 document.getElementById('click2').addEventListener('click', function() {
 for(var j=0;j<1;j++) { 
     for(var i=1;i<57;i++){
-        var image='/image/'+i+'.jpg'
+        var image='./image/'+i+'.jpg'
         var name='محصول'+' '+i;
         var description='توضیحات '+' '+name;
         setproduct(image, name, description);
