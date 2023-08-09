@@ -1,0 +1,25 @@
+.close-button {
+    position: fixed;
+    right: 70vw;
+    font-size: 4vmax;
+    color: #000;
+  }
+  .list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    grid-gap: 10px;
+  }
+
+  @media (max-width: 769px) {
+    .list{
+      grid-template-columns: repeat(1, 1fr); 
+      width: 100vw;
+    }
+    .close-button {
+      position: fixed;
+      right: 49vw;
+      font-size: 4vmax;
+      color: #000;
+    }
+
+  }

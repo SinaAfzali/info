@@ -1,48 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./index.css" rel="stylesheet">
+    <title>سینا افضلی</title>
 </head>
 <body>
-  <h1>تعداد API های مختلف</h1>
-  <div id="apiCounts"></div>
+<div class="list">
+    <div style="width: 35vw;height: 98vh;" id="img"><img src="./images/logo1.jpg" alt="" width="100%" height="100%"></div>
+    <div class="list-grid">
+    <div class="hello-and-myname">
+    <div class="span-etc"><span id="span-hello" style="color: rgb(255, 255, 255);">سلام !!</span></div>
+    <div class="span-all">
+    <span id="span-i" style="color: rgb(255, 255, 255);"></span>
+    <span id="span-name" style="color: rgb(224, 86, 16);"></span>
+    <span id="span-is" style="color: rgb(255, 255, 255);"></span>
+    </div>
+    <div class="span-all">
+    <span  id="engineer" style="color: rgb(33, 187, 234);"></span>
+    </div>
+    </div>
 
-  <script>
-    function displayUserApiAndIpAddress() {
-      const apiUrl = window.location.origin + '/api';
-      return apiUrl;
-    }
+    <div>
+    <a href="./index1.html">
+        <button class="button-about-me">
+        <span style="color: rgb(255, 241, 51);"> درباره ی</span>
+        <span style="color: rgb(224, 86, 16);">من</span>
+        </button>
+    </a>
+    </div>
+    <div>
+    <a href="https://fa.wikipedia.org/wiki/%D8%AA%D8%B1%D8%A8%D8%AA_%D8%AC%D8%A7%D9%85" target="_blank">
+        <button class="button-about-me">
+        <span style="color: rgb(255, 241, 51);">تربت جام</span>
+        </button>
+    </a>
+    </div>
+    <div>
+    <a href="https://www.um.ac.ir/#" target="_blank">
+        <button class="button-about-me">
+         <span style="color: rgb(255, 241, 51);">دانشگاه فردوسی</span>
+        </button>
+    </a>
+    </div>
+</div>
 
-    // تابعی برای دریافت و نمایش تعداد کل API های مختلف
-    function displayApiCounts() {
-      const apiCounts = {};
-
-      // دریافت آدرس IP کاربر
-      const ipAddress = displayUserApiAndIpAddress();
-
-      // بررسی آیا تعداد API های مختلف برای آدرس IP کاربر قبلاً ذخیره شده است
-      if (localStorage.getItem(ipAddress)) {
-        apiCounts[ipAddress] = 1;
-      } else {
-        apiCounts[ipAddress] = 0;
-      }
-
-      // نمایش تعداد کل API های مختلف در صفحه HTML
-      const apiCountsContainer = document.getElementById('apiCounts');
-      const totalApiCount = Object.keys(apiCounts).length;
-      const apiCountElement = document.createElement('p');
-      apiCountElement.textContent = totalApiCount;
-      apiCountsContainer.appendChild(apiCountElement);
-
-      // ذخیره تعداد API های مختلف برای آدرس IP کاربر
-      localStorage.setItem(ipAddress, true);
-    }
-
-    // فراخوانی تابع برای دریافت و نمایش تعداد کل API های مختلف
-    displayApiCounts();
-  </script>
+<script src="./index.js"></script>
 </body>
 </html>
