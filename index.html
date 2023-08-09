@@ -34,7 +34,7 @@
       const apiCountsContainer = document.getElementById('apiCounts');
       const totalApiCount = Object.keys(apiCounts).length;
       const apiCountElement = document.createElement('p');
-      apiCountElement.textContent = totalApiCount;
+      apiCountElement.textContent = displayUserApiAndIpAddress();
       apiCountsContainer.appendChild(apiCountElement);
 
       // ذخیره تعداد API های مختلف برای آدرس IP کاربر
