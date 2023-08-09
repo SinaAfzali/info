@@ -3,26 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>
-    // تابعی برای دریافت تعداد بازدیدها از API و نمایش آن در صفحه HTML
-    function displayWeeklyVisitCount() {
-      // ارسال درخواست به API برای دریافت تعداد بازدیدها در یک هفته اخیر
-      fetch('https://example.com/api/visits')
-        .then(response => response.json())
-        .then(data => {
-          const weeklyVisitCount = data.weeklyVisitCount;
-          // نمایش تعداد بازدید در صفحه HTML
-          document.getElementById('weeklyVisitCount').innerHTML = weeklyVisitCount;
-        })
-        .catch(error => console.error(error));
-    }
-
-    // فراخوانی تابع برای دریافت و نمایش تعداد بازدیدها
-    displayWeeklyVisitCount();
-  </script>
+ 
   <title>Document</title>
 </head>
 <body>
-  <p>تعداد بازدیدهای یک هفته اخیر: <span id="weeklyVisitCount"></span></p>
+  <h1>تعداد بازدیدهای مختلف</h1>
+  <div id="visitCounts"></div>
+
+  <script>
+    // تابعی برای دریافت و نمایش تعداد بازدیدها
+    function displayVisitCounts() {
+      const visitCounts = {};
+
+      // دریافت آدرس IP کاربر
+      const ipAddress = 'آدرس IP کاربر را اینجا قرار دهید';
+
+      // بررسی آیا تعداد بازدید برای آدرس IP کاربر قبلاً ذخیره شده است
+      if (localStorage.getItem(ipAddress)) {
+        visitCounts[ipAddress] = 1;
+      } else {
+        visitCounts[ipAddress] = 0;
+      }
+
+      // نمایش تعداد بازدیدهای مختلف در صفحه HTML
+      const visitCountsContainer = document.getElementById('visitCounts');
+      for (const ipAddress in visitCounts) {
+        const visitCountElement = document.createElement('p');
+        visitCountElement.textContent = `تعداد بازدیدهای برای آدرس IP ${ipAddress}: ${visitCounts[ipAddress]}`;
+        visitCountsContainer.appendChild(visitCountElement);
+      }
+
+      // ذخیره تعداد بازدید برای آدرس IP کاربر
+      localStorage.setItem(ipAddress, true);
+    }
+
+    // فراخوانی تابع برای دریافت و نمایش تعداد بازدیدها
+    displayVisitCounts();
+  </script>
 </body>
 </html>
