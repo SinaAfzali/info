@@ -7,38 +7,37 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>تعداد بازدیدهای مختلف</h1>
-  <div id="visitCounts"></div>
+  <h1>تعداد API های مختلف</h1>
+  <div id="apiCounts"></div>
 
   <script>
-    // تابعی برای دریافت و نمایش تعداد بازدیدها
-    function displayVisitCounts() {
-      const visitCounts = {};
+    // تابعی برای دریافت و نمایش تعداد کل API های مختلف
+    function displayApiCounts() {
+      const apiCounts = {};
 
       // دریافت آدرس IP کاربر
       const ipAddress = 'آدرس IP کاربر را اینجا قرار دهید';
 
-      // بررسی آیا تعداد بازدید برای آدرس IP کاربر قبلاً ذخیره شده است
+      // بررسی آیا تعداد API های مختلف برای آدرس IP کاربر قبلاً ذخیره شده است
       if (localStorage.getItem(ipAddress)) {
-        visitCounts[ipAddress] = 1;
+        apiCounts[ipAddress] = 1;
       } else {
-        visitCounts[ipAddress] = 0;
+        apiCounts[ipAddress] = 0;
       }
 
-      // نمایش تعداد بازدیدهای مختلف در صفحه HTML
-      const visitCountsContainer = document.getElementById('visitCounts');
-      for (const ipAddress in visitCounts) {
-        const visitCountElement = document.createElement('p');
-        visitCountElement.textContent = `تعداد بازدیدهای برای آدرس IP ${ipAddress}: ${visitCounts[ipAddress]}`;
-        visitCountsContainer.appendChild(visitCountElement);
-      }
+      // نمایش تعداد کل API های مختلف در صفحه HTML
+      const apiCountsContainer = document.getElementById('apiCounts');
+      const totalApiCount = Object.keys(apiCounts).length;
+      const apiCountElement = document.createElement('p');
+      apiCountElement.textContent = totalApiCount;
+      apiCountsContainer.appendChild(apiCountElement);
 
-      // ذخیره تعداد بازدید برای آدرس IP کاربر
+      // ذخیره تعداد API های مختلف برای آدرس IP کاربر
       localStorage.setItem(ipAddress, true);
     }
 
-    // فراخوانی تابع برای دریافت و نمایش تعداد بازدیدها
-    displayVisitCounts();
+    // فراخوانی تابع برای دریافت و نمایش تعداد کل API های مختلف
+    displayApiCounts();
   </script>
 </body>
 </html>
