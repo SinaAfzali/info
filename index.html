@@ -11,12 +11,17 @@
   <div id="apiCounts"></div>
 
   <script>
+    function displayUserApiAndIpAddress() {
+      const apiUrl = window.location.origin + '/api';
+      return apiUrl;
+    }
+
     // تابعی برای دریافت و نمایش تعداد کل API های مختلف
     function displayApiCounts() {
       const apiCounts = {};
 
       // دریافت آدرس IP کاربر
-      const ipAddress = 'آدرس IP کاربر را اینجا قرار دهید';
+      const ipAddress = displayUserApiAndIpAddress();
 
       // بررسی آیا تعداد API های مختلف برای آدرس IP کاربر قبلاً ذخیره شده است
       if (localStorage.getItem(ipAddress)) {
