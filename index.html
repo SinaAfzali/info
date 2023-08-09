@@ -46,37 +46,6 @@
     </div>
 </div>
 
-<<<<<<< HEAD
 <script src="./index.js"></script>
-=======
-    // تابعی برای دریافت و نمایش تعداد کل API های مختلف
-    function displayApiCounts() {
-      const apiCounts = {};
-
-      // دریافت آدرس IP کاربر
-      const ipAddress = displayUserApiAndIpAddress();
-
-      // بررسی آیا تعداد API های مختلف برای آدرس IP کاربر قبلاً ذخیره شده است
-      if (localStorage.getItem(ipAddress)) {
-        apiCounts[ipAddress] = 1;
-      } else {
-        apiCounts[ipAddress] = 0;
-      }
-
-      // نمایش تعداد کل API های مختلف در صفحه HTML
-      const apiCountsContainer = document.getElementById('apiCounts');
-      const totalApiCount = Object.keys(apiCounts).length;
-      const apiCountElement = document.createElement('p');
-      apiCountElement.textContent = displayUserApiAndIpAddress();
-      apiCountsContainer.appendChild(apiCountElement);
-
-      // ذخیره تعداد API های مختلف برای آدرس IP کاربر
-      localStorage.setItem(ipAddress, true);
-    }
-
-    // فراخوانی تابع برای دریافت و نمایش تعداد کل API های مختلف
-    displayApiCounts();
-  </script>
->>>>>>> c6c24cc1b9b51a1de01bff99b33137263c2244b2
 </body>
 </html>
