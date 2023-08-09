@@ -12,7 +12,7 @@
         .then(data => {
           const weeklyVisitCount = data.weeklyVisitCount;
           // نمایش تعداد بازدید در صفحه HTML
-          document.getElementById('weeklyVisitCount').textContent = weeklyVisitCount;
+          document.getElementById('weeklyVisitCount').innerHTML = weeklyVisitCount;
         })
         .catch(error => console.error(error));
     }
@@ -23,6 +23,6 @@
   <title>Document</title>
 </head>
 <body>
-  <p>تعداد بازدیدهای یک هفته اخیر: <span id="weeklyVisitCount"></span></p> 
+  <p>تعداد بازدیدهای یک هفته اخیر: <span id="weeklyVisitCount"></span></p>
 </body>
 </html>
