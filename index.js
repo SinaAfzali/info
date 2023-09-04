@@ -33,17 +33,17 @@ function animateWords(words,wordContainer,time,repiet) {
 
 
 
-    animateWords(words2,wordContainer2,250,false);
+    animateWords(words2,wordContainer2,200,false);
       setTimeout(() => { 
-        animateWords(words3, wordContainer3,250,false);
+        animateWords(words3, wordContainer3,200,false);
         setTimeout(() => { 
-          animateWords(words4, wordContainer4,250,false);
+          animateWords(words4, wordContainer4,200,false);
           setTimeout(() => { 
-            animateWords(words5, wordContainer5,250,false);
+            animateWords(words5, wordContainer5,200,false);
             setTimeout(() => { 
-              animateWords(words1, wordContainer1,350,true);
+              animateWords(words1, wordContainer1,250,true);
             }, 2000);
-          }, 1000);
+          }, 2000);
         }, 400);
       }, 2000);
 
