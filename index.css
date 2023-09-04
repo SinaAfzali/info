@@ -26,7 +26,7 @@
   }
 
   #engineer{
-    animation: wordAnimation 0.45s infinite;
+    animation: wordAnimation 0.5s infinite;
     margin-top: 1vw;
     margin-bottom: 1vw;
     font-size: 3vmax;
